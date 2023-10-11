@@ -15,18 +15,32 @@ export const PaddingContainer = styled.div`
   padding-bottom: ${({ bottom }) => bottom};
   padding-left: ${({ left }) => left};
   padding-bottom: ${({ right }) => right};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding-top: ${({ responsiveTop }) => responsiveTop};
+    padding-bottom: ${({ responsiveBottom }) => responsiveBottom};
+    padding-left: ${({ responsiveLeft }) => responsiveLeft};
+    padding-bottom: ${({ responsiveRight }) => responsiveRight};
+  }
 `;
 
 export const FlexContainer = styled.div`
-    display: flex;
-    justify-content: ${({ justify }) => justify};
-    align-items: ${({ align }) => align};
-    gap: ${({ gap }) => gap};
-    flex-direction: ${({ direction }) => direction};
+  display: flex;
+  justify-content: ${({ justify }) => justify};
+  align-items: ${({ align }) => align};
+  gap: ${({ gap }) => gap};
+  flex-direction: ${({ direction }) => direction};
+  margin-right: ${({ margin }) => margin};
 
-    & > div {
-        flex: ${({ fullWidthChild }) => fullWidthChild && 1}
-    }
+  & > div {
+    flex: ${({ fullWidthChild }) => fullWidthChild && 1};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: ${({ responsiveFlex }) => (responsiveFlex ? "flex" : "block")};
+
+    flex-direction: ${({ responsiveDirection }) => responsiveDirection};
+  }
 `;
 export const Heading = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.white};
@@ -45,6 +59,23 @@ export const Heading = styled(PaddingContainer)`
         return;
     }
   }};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: ${({ size }) => {
+      switch (size) {
+        case "h1":
+          return "2.5rem";
+        case "h2":
+          return "2rem";
+        case "h3":
+          return "1.5rem";
+        case "h4":
+          return "1rem";
+        default:
+          return;
+      }
+    }};
+  }
 `;
 
 export const BlueText = styled.span`
@@ -59,14 +90,31 @@ export const ParaText = styled(PaddingContainer)`
 export const IconContainer = styled.div`
   font-size: ${({ size }) => size};
   cursor: pointer;
-  color: ${({color, theme}) =>{
-    switch(color){
-        case 'white':
-            return theme.colors.white;
-        case 'blue':
-            return theme.colors.secondary;
-        default:
-            return;
+  color: ${({ color, theme }) => {
+    switch (color) {
+      case "white":
+        return theme.colors.white;
+      case "blue":
+        return theme.colors.secondary;
+      default:
+        return;
     }
-  }}
+  }};
+`;
+
+export const Button = styled.a`
+  display:inline-block;
+  width: max-content;
+  padding: 1rem 2rem;
+  color: ${({ theme }) => theme.colors.white};
+  background-color:${({ theme }) => theme.colors.primary_light};
+  border:1px solid ${({ theme }) => theme.colors.gray}
+  border-radius: 5px;
+  cursor:pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+  color: ${({ theme }) => theme.colors.primary_light};
+  background-color:${({ theme }) => theme.colors.white};
+  }
 `;
