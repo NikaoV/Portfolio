@@ -37,7 +37,7 @@ const Myskills = () => {
       </Heading>
       <FlexContainer responsiveFlex
         align="center"
-        responsiveDirection="column"
+        responsiveDirection="columnt "
         fullWidthChild>
         {/* Seccion de la izquierda */}
         <SkillsCardContainer>

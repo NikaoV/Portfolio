@@ -15,7 +15,7 @@ export const Logo =styled.p`
     font-size:1.7rem;
     font-weight: ${({theme }) => theme.fonts.weight.medium};
     color: white;
-    margin-top:30px;
+
     
 `
 
@@ -26,8 +26,8 @@ cursor:pointer;
 transition: all 0.2s ease;
 display:flex;
 align-items:center;
-margin-right: 80px;
-margin-top:30px;
+margin-right: 20px;
+
 
 `
 export const NavMenuContainer =styled.div `
