@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 // Importar estilos globales
 import {
@@ -18,6 +19,8 @@ import {
 } from "../styles/MySkills.styled";
 
 import { Skills, Skillsillustration } from "../utils/Data";
+
+import {fadeInLeftVariant, fadeInRightVariant} from '../utils/Variant'
 
 const Myskills = () => {
   return (
@@ -40,7 +43,12 @@ const Myskills = () => {
         responsiveDirection="columnt "
         fullWidthChild>
         {/* Seccion de la izquierda */}
-        <SkillsCardContainer>
+        <SkillsCardContainer
+          as={motion.div}
+          variants={fadeInLeftVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
           {Skills.map((skill) => (
             <SkillsCard>
               <IconContainer size="4rem" color="blue">
@@ -55,8 +63,15 @@ const Myskills = () => {
         </SkillsCardContainer>
 
         {/* Seccion de la derecha */}
-        <div>
-          <SkillsCardContainer>
+        <motion.div
+        as={motion.div}
+        variants={fadeInRightVariant}
+        initial="hidden"
+        whileInView="visible"
+        >
+          <SkillsCardContainer
+          
+          >
             {Skillsillustration.map((skill) => (
               <SkillsCard2>
                 <IconContainer size="4rem" color="blue">
@@ -69,7 +84,7 @@ const Myskills = () => {
               </SkillsCard2>
             ))}
           </SkillsCardContainer>
-        </div>
+        </motion.div>
       </FlexContainer>
     </PaddingContainer>
   );

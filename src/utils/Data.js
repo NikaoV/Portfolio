@@ -99,7 +99,7 @@ export const projectDetails = [
     tech_stack: ["HTML", "CSS"],
     project_Img: Project2,
     project_url: "https://swipe-three.vercel.app/",
-    reverse: false,
+    reverse: true,
   },
 ];
 
