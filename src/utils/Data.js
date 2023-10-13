@@ -111,12 +111,12 @@ export const navLinks = [
   },
   {
     id: 1,
-    name: "My Skills",
+    name: "Skills",
     href: "Skills",
   },
   {
     id: 2,
-    name: "My Projects",
+    name: "Projects",
     href: "Projects",
   },
   {
@@ -127,3 +127,18 @@ export const navLinks = [
 
   
 ];
+// export const allLinks = [
+//   {
+//     href: "Home",
+//   },
+//   {
+//     id: 1,
+//     name: "My Skills",
+//     href: "Skills",
+//   },
+
+
+  
+// ];
+
+

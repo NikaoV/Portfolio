@@ -27,13 +27,13 @@ import { fadeInLeftVariant, fadeInRightVariant } from "../../utils/Variant";
 const Project = ({ data }) => {
   return (
     <FlexContainer
-    direction={data.reverse ? 'row-reverse' : false}
-    fullWidthChild
+      direction={data.reverse ? "row-reverse" : false}
+      fullWidthChild
     >
       <motion.div
-      variants={data.reverse ? fadeInRightVariant: fadeInLeftVariant}
-      initial="hidden"
-      whileInView="visible"
+        variants={data.reverse ? fadeInRightVariant : fadeInLeftVariant}
+        initial="hidden"
+        whileInView="visible"
       >
         <FlexContainer align="center" gap="1rem">
           {/* Seccion de la izquierda */}
@@ -57,17 +57,28 @@ const Project = ({ data }) => {
           {data.project_desc}
         </ParaText>
 
-        <Button> Visit Website</Button>
+        <Button 
+         padding="1rem 2rem"
+        id="0"
+        href={data.id ? 'https://swipe-three.vercel.app/' : 'https://migracion-hotels.vercel.app/'}>
+          Visit Website
+        </Button>
+
+        {/* <Button 
+        id="1"
+        href="https://swipe-three.vercel.app/">
+          Visit Website
+        </Button> */}
       </motion.div>
       {/* Seccion de la derecha */}
 
       <ProjectImageContainer
-    as={motion.div}
-    variants={data.reverse ? fadeInLeftVariant : fadeInRightVariant}
-    initial="hidden"
-    whileInView="visible"
-    justify={data.reverse ? 'flex-start' : 'flex-end' 
-    }>
+        as={motion.div}
+        variants={data.reverse ? fadeInLeftVariant : fadeInRightVariant}
+        initial="hidden"
+        whileInView="visible"
+        justify={data.reverse ? "flex-start" : "flex-end"}
+      >
         <ProjectImage src={data.project_Img} alt={data.project_name} />
       </ProjectImageContainer>
     </FlexContainer>

@@ -62,7 +62,7 @@ const Showcase = () => {
           </Heading>
 
           <ParaText as="p" top="2rem" bottom="4rem">
-            I have been studying <BlueText>programming</BlueText> for 6 months
+            I have been studying <BlueText>programming</BlueText> for 4 months
             and developing some <BlueText>projects</BlueText> , I have 2 years
             of experience in <BlueText>Illustration </BlueText> and I have also
             been studying <BlueText>3D Animation</BlueText> for a year.

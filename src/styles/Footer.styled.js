@@ -14,16 +14,12 @@ export const FormLabel = styled.div`
   padding-bottom: 10px;
 `;
 
-export const FormInput = styled.input`
-  width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary_light};
-  border: 1px solid ${({ theme }) => theme.colors.para_text_color};
-  color: ${({ theme }) => theme.colors.para_text_color};
-  border-radius:5px;
-  padding:15px;
+export const FormInput = styled.p`
+    color: ${({ theme }) => theme.colors.secondary};
+    margin-top:10px;
+    margin-left:5px;
 
   &::placeholder{
-  color: ${({ theme }) => theme.colors.para_text_color};
-
+    
   }
 `;

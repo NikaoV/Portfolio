@@ -1,83 +1,125 @@
-import React from 'react'
+import React from "react";
 
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
+import { MdOutgoingMail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
-// importar estilos globales 
+// importar estilos globales
 import {
-    PaddingContainer,
-    Heading,
-    BlueText,
-    FlexContainer,
-    Button,
-} from '../styles/Global.styled'
+  PaddingContainer,
+  Heading,
+  BlueText,
+  FlexContainer,
+  Button,
+  IconContainer,
+} from "../styles/Global.styled";
+import { navLinks } from "../utils/Data";
 
 // Importar estilos del Footer
-import {ContactForm, FormLabel,
-    FormInput }from '../styles/Footer.styled'
+import { ContactForm, FormLabel, FormInput } from "../styles/Footer.styled";
 
-import { fadeInBottomVariant } from '../utils/Variant'
+import { fadeInBottomVariant } from "../utils/Variant";
 
-const Footer = () => {
+const Footer = ({}) => {
   return (
-    <PaddingContainer
-        id="Contact"
-        top="5%"
-        bottom="10%"
-    >
-        <Heading
-            as={motion.h4}
+    <PaddingContainer id="Contact" top="5%" bottom="10%">
+      <Heading
+        as={motion.h4}
+        variants={fadeInBottomVariant}
+        initial="hidden"
+        whileInView="visible"
+        size="h4"
+        align="center"
+      >
+        MY CONTACT
+      </Heading>
+
+      <Heading
+        as={motion.h2}
+        variants={fadeInBottomVariant}
+        initial="hidden"
+        whileInView="visible"
+        size="h2"
+        align="center"
+        top="0.5rem"
+      >
+        Contact <BlueText>Me Here</BlueText>
+      </Heading>
+
+      <PaddingContainer top="3rem">
+        <FlexContainer justify="center">
+          <ContactForm
+            as={motion.form}
             variants={fadeInBottomVariant}
             initial="hidden"
             whileInView="visible"
-            size="h4"
-            align="center"
-        >
-            MY CONTACT
-        </Heading>
+          >
+            <PaddingContainer bottom="2rem">
+              <Heading as="h4" size="h4" align="center">
+                <BsFillTelephoneFill /> Cellphone:
+              </Heading>
+              <FormInput align="center"> 3112323503</FormInput>
+            </PaddingContainer>
 
-        <Heading
-            as={motion.h2}
-            variants={fadeInBottomVariant}
-            initial="hidden"
-            whileInView="visible"
-            size="h2"
-            align="center"
-            top="0.5rem"
-        >
-            Contact <BlueText>Me Here</BlueText>
-        </Heading>
+            <PaddingContainer bottom="2rem">
+              <Heading as="h4" size="h4" align="center">
+                <MdOutgoingMail /> Email:
+              </Heading>
+              <FormInput align="center">nikaovictory@hotmail.com</FormInput>
+            </PaddingContainer>
 
-        <PaddingContainer top="3rem">
-            <FlexContainer justify="center">
-                <ContactForm
-                as={motion.form}
-                variants={fadeInBottomVariant}
-                initial="hidden"
-                whileInView="visible"
+            <FlexContainer gap="20px" responsiveFlex>
+              <IconContainer
+                left="195px"
+                right="-195px"
+                bottom="20px"
+                align="center"
+                color="blue"
+                size="1.5rem"
+              >
+                <a
+                href="https://github.com/NikaoV"
+                target="_blank"
                 >
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Name:</FormLabel>
-                        <FormInput type="text" placeholder="Enter your name"/>
-                    </PaddingContainer>
+                  <BsLinkedin />
+                </a>
+              </IconContainer>
 
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Email:</FormLabel>
-                        <FormInput type="email" placeholder="Enter your email"/>
-                    </PaddingContainer>
+              <IconContainer
+                left="195px"
+                right="-195px"
+                bottom="20px"
+                align="center"
+                color="blue"
+                size="1.5rem"
+              >
+                <a
 
-                    <PaddingContainer bottom="2rem">
-                        <FormLabel>Message:</FormLabel>
-                        <FormInput as="textarea" placeholder="Enter your message"/>
-                    </PaddingContainer>
-
-                    <FlexContainer justify="center" responsiveFlex>
-                        <Button> Send Message</Button>
-                    </FlexContainer>
-                </ContactForm>
+                href="https://github.com/NikaoV"
+                target="_blank"
+                >
+                <BsGithub />
+                </a>
+              </IconContainer>
             </FlexContainer>
-        </PaddingContainer>
-    </PaddingContainer>
-  )
-}
 
-export default Footer
+            <FlexContainer justify="center" responsiveFlex>
+              {navLinks.map((link) => (
+                <Button
+                  key={link.id}
+                  href={`#${link.href}`}
+                  padding="10px 5rem"
+                >
+                  {link.name}
+                </Button>
+              ))}
+            </FlexContainer>
+          </ContactForm>
+        </FlexContainer>
+      </PaddingContainer>
+    </PaddingContainer>
+  );
+};
+
+export default Footer;

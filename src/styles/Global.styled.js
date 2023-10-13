@@ -90,6 +90,10 @@ export const ParaText = styled(PaddingContainer)`
 export const IconContainer = styled.div`
   font-size: ${({ size }) => size};
   cursor: pointer;
+  align-items: ${({ align }) => align};
+  margin-left:${({left})=> left}  ;
+  margin-right: ${({right})=> right};
+  margin-bottom:${({bottom}) => bottom} ;
   color: ${({ color, theme }) => {
     switch (color) {
       case "white":
@@ -105,16 +109,32 @@ export const IconContainer = styled.div`
 export const Button = styled.a`
   display:inline-block;
   width: max-content;
-  padding: 1rem 2rem;
+  padding: ${({padding}) => padding};
   color: ${({ theme }) => theme.colors.white};
   background-color:${({ theme }) => theme.colors.primary_light};
-  border:1px solid ${({ theme }) => theme.colors.gray}
+  border:1px solid ${({ theme }) => theme.colors.gray};
   border-radius: 5px;
   cursor:pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  margin:0 10px;
+  margin-bottom: ${({bottom}) => bottom};
 
   &:hover{
   color: ${({ theme }) => theme.colors.primary_light};
   background-color:${({ theme }) => theme.colors.white};
   }
 `;
+
+export const FadeImage =styled.img `
+    position:absolute;
+    top: ${({top}) => top};
+    right:${({right})=> right};
+    left: ${({left}) => left};
+    bottom:${({bottom})=> bottom};
+    z-index: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      display:none
+    }
+`
