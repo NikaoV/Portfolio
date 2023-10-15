@@ -17,7 +17,7 @@ import {
 import { navLinks } from "../utils/Data";
 
 // Importar estilos del Footer
-import { ContactForm, FormLabel, FormInput } from "../styles/Footer.styled";
+import { ContactForm, FormInput } from "../styles/Footer.styled";
 
 import { fadeInBottomVariant } from "../utils/Variant";
 
@@ -75,12 +75,13 @@ const Footer = ({}) => {
                 right="-195px"
                 bottom="20px"
                 align="center"
-                color="blue"
+               
                 size="1.5rem"
               >
                 <a
-                href="https://github.com/NikaoV"
+                href="https://www.linkedin.com/in/nicolas-fernando-molina-erazo-a613a1278/"
                 target="_blank"
+                color="blue"
                 >
                   <BsLinkedin />
                 </a>
@@ -91,13 +92,14 @@ const Footer = ({}) => {
                 right="-195px"
                 bottom="20px"
                 align="center"
-                color="blue"
+                
                 size="1.5rem"
               >
                 <a
 
                 href="https://github.com/NikaoV"
                 target="_blank"
+                color="blue"
                 >
                 <BsGithub />
                 </a>
@@ -123,4 +125,3 @@ const Footer = ({}) => {
 };
 
 export default Footer;
-// Exportar

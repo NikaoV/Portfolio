@@ -72,11 +72,17 @@ const Showcase = () => {
 
           <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="blue" size="1.5rem">
-              <BsLinkedin />
+            <a 
+            href="https://github.com/"
+            >
+                <BsLinkedin />
+            </a>
             </IconContainer>
-
+            
             <IconContainer color="blue" size="1.5rem">
-              <BsGithub />
+              <a href="https://github.com/NikaoV" target="_blank">
+                <BsGithub />
+              </a>
             </IconContainer>
           </FlexContainer>
         </motion.div>

@@ -60,7 +60,9 @@ const Project = ({ data }) => {
         <Button 
          padding="1rem 2rem"
         id="0"
-        href={data.id ? 'https://swipe-three.vercel.app/' : 'https://migracion-hotels.vercel.app/'}>
+        href={data.id ? 'https://swipe-three.vercel.app/' : 'https://migracion-hotels.vercel.app/'}
+        target="_blank"
+        >
           Visit Website
         </Button>
 
